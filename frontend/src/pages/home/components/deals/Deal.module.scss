@@ -1,0 +1,53 @@
+.container{
+  width: 100%;
+  background-image: url(https://preview.colorlib.com/theme/vegefoods/images/bg_3.jpg.webp);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+    .content {
+      width: 100%;
+      padding: 90px 0px;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+        .title{
+          width: 50%;
+
+            #top {
+              font-size: 18px;
+              margin-bottom: 10px;
+              font-style: italic;
+              color: #82ae46;
+            }
+            h2 {
+              font-size: 40px;
+              font-weight: 600;
+              color: #000000;
+              line-height: 1.5;
+              margin: 0px 0px 24px;
+            }
+            p {
+              margin-bottom: 1rem;
+              font-size: 15px;
+              line-height: 1.8;
+              font-weight: 400;
+              color: gray;
+            }
+            h3 {
+              font-size: 30px;
+              font-style: italic;
+              line-height: 1.5;
+              font-weight: 400;
+              color: #82ae46;
+              margin-bottom: 10px;
+            }
+            #price {
+              font-size: 18px;
+                span {
+                  color: #82ae46;
+                }
+            }
+        }
+    }
+}
