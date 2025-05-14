@@ -50,5 +50,26 @@
             }
         }
 
+        .burger {
+          display: none;
+        }
+
     }
+}
+
+@media (max-width: 768px) {
+  .container {
+    header {
+      width: 90%;
+      nav {
+        display: none;
+      }
+      .icon {
+        display: none;
+      }
+      .burger {
+        display: block;
+      }
+    }
+  }
 }
