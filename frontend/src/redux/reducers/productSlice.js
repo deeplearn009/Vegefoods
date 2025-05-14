@@ -6,6 +6,16 @@ export const getProductsThunk = createAsyncThunk("/products/get", async () => {
     return res.data
 })
 
+export const postProductsThunk = createAsyncThunk("/products/post", async (data) => {
+    await axios.post("http://localhost:6060/products", data);
+    return data
+})
+
+export const deleteProductsThunk = createAsyncThunk("/products/delete", async (id) => {
+    await axios.delete(`http://localhost:6060/products/${id}`);
+    return id
+})
+
 const productSlice = createSlice({
     name: "products",
     initialState: {
@@ -15,9 +25,6 @@ const productSlice = createSlice({
     extraReducers: builder => {
         builder
 
-            .addCase(getProductsThunk.pending, (state, action) => {
-                state.loading = true;
-            })
             .addCase(getProductsThunk.fulfilled, (state, action) => {
                 state.loading = false;
                 state.products = action.payload;
@@ -25,6 +32,14 @@ const productSlice = createSlice({
             .addCase(getProductsThunk.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message;
+            })
+
+            .addCase(postProductsThunk.fulfilled, (state, action) => {
+                state.products.push(action.payload);
+            })
+
+            .addCase(deleteProductsThunk.fulfilled, (state, action) => {
+                state.products = state.products.filter(item => item._id !== action.payload);
             })
     }
 })
